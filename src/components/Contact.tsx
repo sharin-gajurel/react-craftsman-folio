@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import emailjs from "emailjs-com";
 
 const contactInfo = [
   {
@@ -54,19 +55,43 @@ export const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Replace with your actual EmailJS credentials
+  const SERVICE_ID = "your_service_id";
+  const TEMPLATE_ID = "your_template_id";
+  const PUBLIC_KEY = "your_public_key";
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        PUBLIC_KEY
+      );
+
       toast({
         title: "Message sent!",
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
+
       setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast({
+        title: "Error!",
+        description: "Something went wrong while sending your message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const handleChange = (
@@ -85,7 +110,7 @@ export const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">
             Get In <span className="gradient-text">Touch</span>
           </h2>
-          
+
           <p className="text-lg text-muted-foreground mb-12 text-center">
             Let's discuss your next project or opportunity
           </p>
