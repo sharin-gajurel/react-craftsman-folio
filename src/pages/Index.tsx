@@ -22,7 +22,7 @@ const Index = () => {
       <Contact />
       
       <footer className="py-8 text-center text-muted-foreground border-t border-border">
-        <p>&copy; 2024 Your Name. Product Owner at CG Communication</p>
+        <p>&copy; © 2025 Sharin Gajurel. All rights reserved.</p>
       </footer>
     </div>
   );

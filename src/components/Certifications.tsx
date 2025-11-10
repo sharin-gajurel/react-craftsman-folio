@@ -21,7 +21,7 @@ const certifications = [
     title: "Programming for Everybody (Getting Started with Python)",
     issuer: "Coursera",
     date: "2023",
-    description: "UNderstanding the basics of Python",
+    description: "Understanding the basics of Python",
     link: "https://www.coursera.org/account/accomplishments/verify/CG9EWHJQ2YUG",
   },
 ];
