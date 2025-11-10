@@ -56,9 +56,9 @@ export const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Replace with your actual EmailJS credentials
-  const SERVICE_ID = "your_service_id";
-  const TEMPLATE_ID = "your_template_id";
-  const PUBLIC_KEY = "your_public_key";
+  const SERVICE_ID = "service_v8mwfph";
+  const TEMPLATE_ID = "template_23p42vz";
+  const PUBLIC_KEY = "SIkZxAXlv5TOe_p1g";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
