@@ -3,10 +3,15 @@ import { Button } from "@/components/ui/button";
 
 export const Resume = () => {
   const handleDownload = () => {
-    // Create a link to download the CV
+    // Create a link to download the CV from the public folder
     const link = document.createElement('a');
+<<<<<<< HEAD
     link.href = '""D:\react-craftsman-folio-main\public\Sharin Gajurel CV.pdf""'; // You'll need to add your CV PDF to the public folder
     link.download = 'Sharin Gajurel CV.pdf';
+=======
+    link.href = '/Sharin_Gajurel_CV.pdf';
+    link.download = 'Sharin_Gajurel_CV.pdf';
+>>>>>>> 1699658366d43006f9dac04eea2b9b460db486b9
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
