@@ -5,8 +5,8 @@ export const Resume = () => {
   const handleDownload = () => {
     // Create a link to download the CV
     const link = document.createElement('a');
-    link.href = '"D:\Sharin Gajurel CV.pdf"'; // You'll need to add your CV PDF to the public folder
-    link.download = 'Sharin_Gajurel_CV.pdf';
+    link.href = '""D:\react-craftsman-folio-main\public\Sharin Gajurel CV.pdf""'; // You'll need to add your CV PDF to the public folder
+    link.download = 'Sharin Gajurel CV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
